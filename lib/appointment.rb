@@ -2,12 +2,11 @@ require 'pry'
 
 class Appointment
 
-  attr_accessor :date, :doctor
-  attr_reader :patient
+  attr_accessor :date, :patient, :doctor
 
   @@all = []
 
-  def initialize(patient=nil, doctor=nil, date=nil)
+  def initialize(patient=nil, date=nil, doctor=nil)
     @date = date
     @patient = patient
     @doctor = doctor
@@ -16,18 +15,6 @@ class Appointment
 
   def self.all
     @@all
-  end
-
-  def patient
-    Appointment.all.select do |appointment|
-    appointment.patient
-    end
-  end
-
-  def doctor
-    Appointment.all.select do |appointment|
-    appointment.doctor
-    end
   end
 
 end
