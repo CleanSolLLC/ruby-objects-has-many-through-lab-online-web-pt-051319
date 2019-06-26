@@ -11,8 +11,11 @@ class Doctor
   end
 
   def new_appointment(patient, date)
-    @patient = patient
-    @date = date
+    Appoinment.new(patient, date, self)
+  end
+
+  def appointments
+    Appointment.all.select {|appointment| appointment.doctor == self}
   end
 
 
