@@ -14,7 +14,7 @@ class Doctor
     @patient = patient
     @date = date
   end
-    
+
 
   def self.all
     @@all
