@@ -1,7 +1,7 @@
 require 'pry'
 
 class Doctor
-  attr_accessor :name, :patients, :date
+  attr_accessor :name, :patient, :date
 
   @@all = []
 
@@ -24,7 +24,7 @@ class Doctor
 
   def patients
     binding.pry
-    appointments.map {|appointments| appointments.patients.name}
+    appointments.map {|appointments| appointments.patient.name}
   end
 
 end
